@@ -1,18 +1,19 @@
 package com.example.demo.dto;
 
 import com.example.demo.entity.User;
+import com.example.demo.other.UserType;
+import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 @Data
-@SuperBuilder
+@Builder
 public class UserDTO {
     private Long id;
     private String username;
     private String password;
     private String name;
     private Integer age;
-    private String role;
+    private UserType type;
 
     public UserDTO() {
     }
@@ -21,6 +22,6 @@ public class UserDTO {
         this.id = user.getId();
         this.name = user.getName();
         this.age = user.getAge();
-        this.role = user.getRole();
+        this.type = user.getType();
     }
 }

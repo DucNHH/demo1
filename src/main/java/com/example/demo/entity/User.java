@@ -1,15 +1,14 @@
 package com.example.demo.entity;
 
+import com.example.demo.other.UserType;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
 @Table
-@Inheritance
-@DiscriminatorColumn(name = "role", discriminatorType = DiscriminatorType.STRING)
-@SuperBuilder
+@Builder
 public class User {
 
     @Id
@@ -17,11 +16,12 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    @Column(name = "role", updatable = false, insertable = false)
-    private String role;
+    private UserType type;
     private String name;
     private Integer age;
 
     public User() {
     }
 }
+
+

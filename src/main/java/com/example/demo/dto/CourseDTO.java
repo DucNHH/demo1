@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 import com.example.demo.entity.Course;
-import com.example.demo.entity.Student;
 import lombok.Data;
 
 import java.util.List;
@@ -20,6 +19,5 @@ public class CourseDTO {
         this.id = course.getId();
         this.courseName = course.getName();
         this.teacherId = course.getTeacher().getId();
-        this.students = course.getStudents().stream().map(Student::getId).toList();
     }
 }
